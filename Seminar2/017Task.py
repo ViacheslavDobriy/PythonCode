@@ -5,7 +5,7 @@
 userNumber = int(input('Input any number.'))
 list = []
 i = 0
-for i in range(-userNumber, userNumber+1):
+for i in range(-userNumber, userNumber+1,2):
     list.append(i)
 result = 1
 with open('C:/Users/user/Desktop/GeekBrains/Python/Seminar2/file.txt', 'r') as data: 
