@@ -2,16 +2,12 @@
 
 from random import randint
 
+list = []
 
-number1 = randint(1,101)
-number2 = randint(1,101)
-number3 = randint(1,101)
-number4 = randint(1,101)
-number5 = randint(1,101)
+for i in range(0,5):
+    list.append(randint(1,101))
 
-list = [number1, number2, number3, number4, number5]
-
-max = number1
+max = list[0]
 count = 0
 while(count < 5):
     print(list[count])
