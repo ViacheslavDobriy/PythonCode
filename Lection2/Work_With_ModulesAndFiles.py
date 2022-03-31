@@ -28,9 +28,9 @@
 
 ##### WORK WITH FUNCTION AND MODULES #####
 
-import hello as h
-# NEED TO WORK ON IT. PYTHON DON'T SEE FILE hello
-print(h.f(1))
+# import hello as h
+# # NEED TO WORK ON IT. PYTHON DON'T SEE FILE hello
+# print(h.f(1))
 
 #######Examples#######
 ###########1########## 
