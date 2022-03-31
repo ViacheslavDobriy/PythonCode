@@ -1,9 +1,12 @@
 # Вывести на экран числа от -N до N
 
-print('Введите число')
-usernumber = int(input())
-count = -usernumber
-while(count<=usernumber):
+
+from Ask_User_To_Input import Input_User_Number
+
+
+userNumber = Input_User_Number()
+count = -userNumber
+while(count<=userNumber):
     print('{0} '.format(count))
     count = count + 1
 
