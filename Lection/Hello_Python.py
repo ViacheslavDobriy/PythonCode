@@ -170,3 +170,9 @@
 # arg = None
 # print(f(arg))
 # print(type(f(arg)))
+
+import os
+print(os.getcwd())
+import hello
+
+print(hello.x(2))
