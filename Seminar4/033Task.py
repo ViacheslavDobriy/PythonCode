@@ -15,10 +15,13 @@ for i in range(1,k+1):
     rate = random.randrange(0,101)
     list_rates.append(rate)
 
-with open('C:\Users\user\Desktop\GeekBrains\Python\Seminar4', 'w') as data:
+print(list_rates)
+
+with open('C:/Users/user/Desktop/GeekBrains/Python/Seminar4/file_for_033.txt', 'w') as data:
     for i in range(1, len(list_rates)+1):
-        if list_rates[i] !=0:
-            data.write('+ {list_rates[-i]}*x^{i} ')
+        print(i)
+        if list_rates[i-1] !=0:
+            data.write(f'+ {list_rates[-i]}*x^{i} ')
     
     # data.write('{}\n')
     # data.write('line2\n')
