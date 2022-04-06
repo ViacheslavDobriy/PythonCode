@@ -3,10 +3,10 @@
 
 list2 = [1, 2, 3, 5, 1, 5, 3, 10]
 
-number = set(list2)
+number = list(set(list2))
 print(number)
-list1 = list(number)
-print(list1)
+# list1 = list(number)
+# print(list1)
 # result_list = []
 # digit = list1[0]
 # for i in list1:
