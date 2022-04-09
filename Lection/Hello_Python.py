@@ -172,7 +172,11 @@
 # print(type(f(arg)))
 
 import os
+# s = os.path.join(r'C:\Users\user\Desktop\GeekBrains\Python\Lection', 'hello.ru')
+# print(os.path.join(s.replace('/','\\')))
 print(os.getcwd())
-import hello
-
-print(hello.x(2))
+# path = os.path.dirname(hello__file__)
+# import hello
+# hello.__file__
+# print(hello.x(2))
+# sys.path
