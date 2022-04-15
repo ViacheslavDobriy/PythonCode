@@ -1,8 +1,9 @@
 # Вывести квадрат числа
 
-from asyncio.windows_events import NULL
+def square_of_number():
+    print('Input your number')
+    userNumber = int(input())
+    print(f'Square of {userNumber} is - ')
+    return userNumber*userNumber
 
-print ('Input your number')
-userNumber = int(input())
-squareOfNumber = userNumber*userNumber
-print ('Square of the user number is {}'.format(squareOfNumber))
+print(square_of_number())
