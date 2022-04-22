@@ -84,22 +84,22 @@
     
 ##### DICTIONARY #####
 
-dictionary = {}
-dictionary = \
-    {
-        'up': '!',
-        'left': '<-',
-        'down': '||',
-        'right': '->'
-    }
+# dictionary = {}
+# dictionary = \
+#     {
+#         'up': '!',
+#         'left': '<-',
+#         'down': '||',
+#         'right': '->'
+#     }
 # print(dictionary) 
 # print(dictionary['left'])
 # # типы ключей могут отличаться
 
 # print(dictionary['up']) # !
 # del dictionary['left'] # delete item
-for item in dictionary:
-    print('{}: {}'.format(item, dictionary[item]))
+# for item in dictionary:
+#     print('{}: {}'.format(item, dictionary[item]))
 
 # for k in dictionary.keys():
 #     print(k)
@@ -149,7 +149,7 @@ for item in dictionary:
 
 ##### LISTS #####
 
-# list1 = [1,2,3,4,5]
+list1 = [1,2,3,4,5]
 # list2 = list1
 
 # for e in list1:
@@ -171,8 +171,8 @@ for item in dictionary:
 #     print(e)
 
 # print(len(list1))
-# print(list1.pop(3))
-# print(list1)
+print(list1.pop(3))
+print(list1)
 
 # print(list1.insert(3,11))
 # print(list1)
