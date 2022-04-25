@@ -61,6 +61,19 @@ def NPC_no_lose_next_turn():
                  [board[2], board[5], board[8]],
                  [board[0], board[4], board[8]],
                  [board[2], board[4], board[6]]]
+
+    for j in range(0,8):
+        current_line = 0
+        for l in range(0,3):
+            if win_lines[j][l] == '0':
+                current_line += 1
+                if current_line == 2:
+                    for each in win_lines[j]:
+                        if each != '0':
+                            if type(each) == type(8):
+                                print('Win')
+                                return each - 1
+
     for i in range(0, 8):
         current_line = 0
         for k in range(0, 3):
@@ -70,10 +83,27 @@ def NPC_no_lose_next_turn():
                     for each in win_lines[i]:
                         if each != 'X':
                             if type(each) == type(9):
+                                print('No lose')
                                 return each - 1
-# Нужно добавить функцию, которая пробует победить игрока еслли не находит ряд с двумя Х в ряд.
 
-# print(NPC_no_lose_second_turn())
+    for j in range(0, 8):
+        current_line = 0
+        if '0' in win_lines[j]:
+            for l in range(0,3):
+                if type(win_lines[j][l]) == type(4):
+                    current_line += 1
+                    if current_line == 2:
+                        print('Try win')
+                        return win_lines[j][l] - 1
+
+    while True:
+        i = random.randint(0,7)
+        j = random.randint(0,2)
+        print(f'i = {i} j = {j}')
+        if type(win_lines[i][j]) == type(1):
+            return win_lines[i][j] - 1
+
+
 def NPC_no_lose_first_turn():
     global board
     if board[4] == 'X':
@@ -89,7 +119,9 @@ def NPC_turn(update: Update, context: CallbackContext, step):
     if step == 2:
         update.message.reply_text('I do my first turn')
         redraw_board(update, context, NPC_no_lose_first_turn(), who_do_turn)
-    if step == 4 or step == 6:
+    elif step == 10:
+        update.message.reply_text('It is draw!')
+    else:
         print('I do my best')
         redraw_board(update, context, NPC_no_lose_next_turn(), who_do_turn)
 
@@ -105,25 +137,6 @@ def round(update: Update, context: CallbackContext):
     redraw_board(update, context, Player_turn(update, context), who_do_turn)
     NPC_turn(update, context, turn_number())
 
-
-# def who_is_first(update: Update, context: CallbackContext):
-#     draw = False
-#     while not draw:
-#         hidden_number = random.randint(0, 10)
-#         update.message.reply_text(f'Я выберу цифру от нуля до 9. Введите цифру от 0 до 9. Если вы будете ближе, чем NPC, к моей цифре - ваша очередь будет первой!')
-#         user_choice = update.message.text
-#         user_choice = int(user_choice)
-#         npc_choice = random.randint(0, 10)
-#         if abs(hidden_number - user_choice) == abs(hidden_number - npc_choice):
-#             update.message.reply_text(f"Я выбрал: {hidden_number}. Ты взял: {user_choice}, но NPC взял: {npc_choice}. Это означает ничью, ещё раз!")
-#         elif abs(hidden_number - user_choice) > abs(hidden_number - npc_choice):
-#             update.message.reply_text(f"Я выбрал: {hidden_number}. Ты взял: {user_choice}, но NPC взял {npc_choice}. NPC ходит первым!")
-#             draw = True
-#             return 'NPC'
-#         else:
-#             print(f"Я выбрал: {hidden_number}. Ты взял: {user_choice}, но NPC взял {npc_choice}. Ты ходишь первым! ")
-#             draw = True
-#             return 'Player'
 
 # updater.dispatcher.add_handler(CommandHandler('hello', hello))
 updater.dispatcher.add_handler(CommandHandler('game', draw_board))
