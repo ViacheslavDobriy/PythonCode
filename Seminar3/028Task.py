@@ -3,7 +3,7 @@
 # b) Используя дополнительные библиотеки*
 
 user_rate_A = 0
-while user_rate_A==0:
+while user_rate_A == 0:
     user_rate_A = int(input('Insert ratio A'))
     user_rate_B = int(input('Insert ratio B'))
     user_rate_C = int(input('Insert ratio C'))
@@ -13,17 +13,20 @@ while user_rate_A==0:
 print(f'Your equation looks like: {user_rate_A}x^2 + {user_rate_B}x + {user_rate_C} = 0')
 
 def Discriminant(user_rate_A, user_rate_B, user_rate_C):
+    '''Function have three rates of equation and return discriminant of equation'''
     result = user_rate_B**2 - 4*user_rate_A*user_rate_C
     return result
 
 def The_Only_One_Solution(user_rate_A, user_rate_B):
-    result = round(- user_rate_B / 2*user_rate_A, 2)
+    '''Function will be launched if discriminant is less than zero. It returns only one root in float type'''
+    result = round(-user_rate_B/(2*user_rate_A), 2)
     return result
 
 def The_Two_Solutions(user_rate_A, user_rate_B, discriminant):
+    '''Function is getting three arguments - ratio A, ratio B and discriminant. It returns list which consists of two float values - two roots'''
     result = []
-    x1 = round(- (user_rate_B + discriminant**0.5)/2*user_rate_A,3)
-    x2 = round(- (user_rate_B - discriminant**0.5)/2*user_rate_A,3)
+    x1 = round(- (user_rate_B + discriminant**0.5)/(2*user_rate_A),3)
+    x2 = round(- (user_rate_B - discriminant**0.5)/(2*user_rate_A),3)
     result.append(x1)
     result.append(x2)
     return result
